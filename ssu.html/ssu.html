@@ -7,6 +7,10 @@ def show_welcome():
     print("        Welcome to Smart Spend U    ")
     print("  A simple budgeting helper for you ")
     print("====================================")
+    def show_money_tip():
+    print("💡 Money Tip of the Day:")
+    print("Track small expenses — they add up fast!\n")
+
     print()
 
 
@@ -151,6 +155,14 @@ def show_final_summary(planned, actual, income):
 
 def main():
     show_welcome()
+    income = get_monthly_income()
+    planned = get_budget_plan()
+    compare_income_to_plan(income, planned["total"])
+    actual = track_actual_spending()
+    show_final_summary(planned, actual, income)
+def main():
+    show_welcome()
+    show_money_tip()  # NEW LINE
     income = get_monthly_income()
     planned = get_budget_plan()
     compare_income_to_plan(income, planned["total"])
